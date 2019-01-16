@@ -11,6 +11,7 @@ pipeline {
       steps {
         sh 'mvn -Dmaven.test.failure.ignore clean package'
         stash(name: 'build-test-artifacts', includes: '**/target/surefire-reports/TEST-*.xml,target/*.jar')
+        dir(path: './Ch03/example-maven-project')
       }
     }
     stage('Report & Publish') {
