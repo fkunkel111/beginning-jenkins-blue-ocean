@@ -4,7 +4,7 @@ pipeline {
     stage('Build & Test') {
       agent {
         node {
-          label 'docker'
+          label 'docker_ssh'
         }
 
       }
@@ -16,7 +16,7 @@ pipeline {
     stage('Report & Publish') {
       agent {
         node {
-          label 'docker'
+          label 'docker_ssh'
         }
 
       }
