@@ -9,7 +9,7 @@ pipeline {
 
       }
       steps {
-        sh 'mvn -Dmaven.test.failure.ignore clean package'
+        sh '/usr/bin/mvn -Dmaven.test.failure.ignore clean package'
         stash(name: 'build-test-artifacts', includes: '**/target/surefire-reports/TEST-*.xml,target/*.jar')
       }
     }
